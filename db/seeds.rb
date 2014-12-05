@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+products = Product.create([{ title: 'Book', price: 499}, {title: 'Movie', price: 699}])
+cart = Cart.create({
+  cart_items_attributes: [{
+    product: products.first
+  }, {
+    product: products.last,
+    quantity: 2
+  }]
+})
