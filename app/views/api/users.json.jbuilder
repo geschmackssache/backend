@@ -1,6 +1,7 @@
-json.user do
-  json.email @user.email
-  json.cart [@user.carts.first.id]
+json.users [@user] do |user|
+  json.id user.id
+  json.email user.email
+  json.cart user.carts.first.id
 end
 
 json.carts [@user.carts.first] do |cart|

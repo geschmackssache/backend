@@ -1,5 +1,5 @@
 class ApiController < ApplicationController
-  def index
+  def users
     # @user = current_or_guest_user
     @user = User.first
     @products = Product.all
