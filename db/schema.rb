@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205144759) do
+ActiveRecord::Schema.define(version: 20141209163231) do
 
   create_table "cart_items", force: true do |t|
     t.integer  "cart_id"
@@ -25,8 +25,15 @@ ActiveRecord::Schema.define(version: 20141205144759) do
   add_index "cart_items", ["product_id"], name: "index_cart_items_on_product_id"
 
   create_table "carts", force: true do |t|
-    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "street"
+    t.integer  "zip"
+    t.string   "city"
+    t.string   "phone"
+    t.string   "email"
     t.boolean  "finished",   default: false
+    t.integer  "user_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
@@ -40,7 +47,19 @@ ActiveRecord::Schema.define(version: 20141205144759) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "startscreens", force: true do |t|
+    t.integer  "zip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "street"
+    t.integer  "zip"
+    t.string   "city"
+    t.string   "phone"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

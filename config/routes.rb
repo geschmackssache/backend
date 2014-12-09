@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'api/users'
-
+  resources :startscreens, path: '/api/startscreens', only: [:index, :show]
   devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
