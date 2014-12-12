@@ -1,5 +1,6 @@
 json.startscreens @startscreens do |startscreen|
   json.id startscreen.zip
+  json.user @user.id
 end
 
 json.user do
@@ -11,7 +12,7 @@ end
 json.carts [@user.carts.first] do |cart|
   json.id cart.id
   json.finished cart.finished
-  json.cart_item @user.carts.first.cart_items.map(&:id)
+  json.cartItems @user.carts.first.cart_items.map(&:id)
 end
 
 json.cart_items @user.carts.first.cart_items do |cart_item|
